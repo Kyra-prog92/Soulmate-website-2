@@ -2,7 +2,7 @@ name: Deploy Static Content to Pages
 
 on:
   push:
-    branches: ["main"] # Triggers every time you push to main
+    branches: ["main"] # Runs every time you push code to the main branch
 
 permissions:
   contents: read
@@ -29,7 +29,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.' # Uploads files from your root folder
+          path: '.' # Looks for your index.html directly in the root folder
 
       - name: Deploy to GitHub Pages
         id: deployment
