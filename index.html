@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forever Begins Here</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sky Background -->
+    <div class="sky-layer stars"></div>
+    <div class="moon"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+    <div class="fog-layer"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- SCENE 1: The Awakening -->
+        <section id="scene1" class="section visible">
+            <h1 class="title-main">
+                <span>F</span><span>o</span><span>r</span><span>e</span><span>v</span><span>e</span><span>r</span>
+                <span>&nbsp;</span>
+                <span>B</span><span>e</span><span>g</span><span>i</span><span>n</span><span>s</span>
+                <span>&nbsp;</span>
+                <span>H</span><span>e</span><span>r</span><span>e</span>
+            </h1>
+            <p class="subtitle">Every heartbeat, every memory, every promise... preserved beyond time.</p>
+
+            <div class="music-box-container">
+                <div class="music-box" id="musicBtn" onclick="toggleMusic()">
+                    <span class="music-icon">&#9654;</span>
+                </div>
+                <p class="music-label">Play Music</p>
+            </div>
+
+            <button class="enter-btn" onclick="enterWorld()">ENTER</button>
+        </section>
+
+        <!-- SCENE 2: The Locked Letter -->
+        <section id="scene2" class="section">
+            <div class="chest-container" id="chest" onclick="openChest()">
+                <div class="chest">
+                    <div class="chest-lid" id="chestLid"></div>
+                    <div class="chest-body"></div>
+                    <div class="chest-lock"></div>
+                </div>
+                <div class="golden-dust" id="goldenDust"></div>
+            </div>
+
+            <div class="password-section" id="passwordSection">
+                <p class="password-label">The letter is sealed with a secret...</p>
+                <div class="password-input-wrapper">
+                    <input type="password" class="password-input" id="passwordInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPassword()">
+                </div>
+                <button class="password-submit" onclick="checkPassword()">Unlock</button>
+            </div>
+
+            <div class="parchment-wrapper" id="parchmentWrapper">
+                <div class="parchment">
+                    <div class="parchment-edge top"></div>
+                    <div class="parchment-edge bottom"></div>
+                    <div class="parchment-edge left"></div>
+                    <div class="parchment-edge right"></div>
+                    <div class="wax-seal" id="waxSeal"></div>
+                    <div class="letter-content" id="letterContent">
+                        <h2>&#9993; The Secret Letter</h2>
+                        <p>"For the one my heart recognized long before my eyes ever did..."</p>
+                        <p>There are moments in life that arrive without warning.</p>
+                        <p>They do not knock. They do not ask permission. They simply appear... and quietly change everything.</p>
+                        <p>Meeting you was never the loud kind of miracle people write about. It was not fireworks falling from the sky. It was not destiny shouting my name. It was something gentler. Something quieter. Like finding warmth after believing winter would never end.</p>
+                        <p>Before you, I had learned to carry my heart carefully. To smile even when I was tired. To laugh while hiding storms no one could see. I believed some parts of me would forever remain misunderstood.</p>
+                        <p>Then somehow... without trying... without asking... without even realizing it... you understood them.</p>
+                        <p>You saw the pieces of me that I had forgotten deserved to be loved. Not the perfect parts. Not the strongest parts. But the frightened ones. The stubborn ones. The broken ones. And somehow... you never turned away.</p>
+                        <p>People often say love changes someone. I do not think that is true. I think real love reminds someone who they were before life convinced them to become someone else. You reminded me.</p>
+                        <p>You reminded me that I could trust again. That I could dream again. That silence could feel peaceful instead of lonely. That home is sometimes not a place... but a person.</p>
+                        <p>There will be days when life becomes difficult. Days when distance feels longer. When words fail us. When misunderstandings cast temporary shadows. When the world asks more from us than we think we can give.</p>
+                        <p>If those days ever come... read this letter again. Remember this moment. Remember that before anything else... before promises... before forever... before dreams... there were simply two imperfect souls choosing each other. Again. And again. And again.</p>
+                        <p>If one day my voice cannot reach you... let these words do what I cannot. If one day doubt ever visits your heart... remember that someone, somewhere, is still choosing you. Not because you are flawless. But because you are you. And somehow... that has always been enough.</p>
+                        <p>If there is another lifetime after this one... I hope we still find each other. Not because destiny owes us anything. But because loving you has become the most beautiful way I know how to exist.</p>
+                        <p>Until every star grows quiet... Until every ocean forgets its waves... Until time itself finally rests... I will always be grateful... that my story found yours.</p>
+                        <div class="letter-signature">&mdash; Yours, forever</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="continue-btn" id="continueBtn1" onclick="goToMemories()">Continue to Memories</button>
+        </section>
+
+        <!-- SCENE 3: Memory Garden -->
+        <section id="scene3" class="section">
+            <h2 class="memory-title">The Memory Garden</h2>
+            <p class="memory-subtitle">Where every moment lives forever...</p>
+
+            <div class="memory-container" id="memoryContainer">
+                <div class="memory-item" data-transition="fog-reveal">
+                    <div class="memory-frame">
+                        <img src="01.jpg" alt="Memory 1" class="memory-img" loading="lazy">
+                        <div class="memory-overlay fog-reveal"></div>
+                    </div>
+                    <p class="memory-caption">Our Beginning</p>
+                </div>
+
+                <div class="memory-item" data-transition="petal-reveal">
+                    <div class="memory-frame">
+                        <img src="02.jpg" alt="Memory 2" class="memory-img" loading="lazy">
+                        <div class="memory-overlay petal-reveal"></div>
+                    </div>
+                    <p class="memory-caption">Suddenly, Some People Feel Like Home</p>
+                </div>
+
+                <div class="memory-item" data-transition="particle-reveal">
+                    <div class="memory-frame">
+                        <img src="03.jpg" alt="Memory 3" class="memory-img" loading="lazy">
+                        <div class="memory-overlay particle-reveal"></div>
+                    </div>
+                    <p class="memory-caption">Moment Whispered, Not Spoken</p>
+                </div>
+
+                <div class="memory-item" data-transition="ink-reveal">
+                    <div class="memory-frame">
+                        <img src="04.jpg" alt="Memory 4" class="memory-img" loading="lazy">
+                        <div class="memory-overlay ink-reveal"></div>
+                    </div>
+                    <p class="memory-caption">To The Very End, You Held Me</p>
+                </div>
+
+                <div class="memory-item" data-transition="butterfly-reveal">
+                    <div class="memory-frame">
+                        <img src="05.jpg" alt="Memory 5" class="memory-img" loading="lazy">
+                        <div class="memory-overlay butterfly-reveal"></div>
+                    </div>
+                    <p class="memory-caption">Instance Touch, Feeling Hot, To Ever I Belong</p>
+                </div>
+
+                <div class="memory-item" data-transition="star-reveal">
+                    <div class="memory-frame">
+                        <img src="06.jpg" alt="Memory 6" class="memory-img" loading="lazy">
+                        <div class="memory-overlay star-reveal"></div>
+                    </div>
+                    <p class="memory-caption">Moments That Stay</p>
+                </div>
+
+                <div class="memory-item" data-transition="rain-reveal">
+                    <div class="memory-frame">
+                        <img src="07.jpg" alt="Memory 7" class="memory-img" loading="lazy">
+                        <div class="memory-overlay rain-reveal"></div>
+                    </div>
+                    <p class="memory-caption">Forever Memories</p>
+                </div>
+
+                <div class="memory-item" data-transition="burn-reveal">
+                    <div class="memory-frame">
+                        <img src="08.jpg" alt="Memory 8" class="memory-img" loading="lazy">
+                        <div class="memory-overlay burn-reveal"></div>
+                    </div>
+                    <p class="memory-caption">Till My Love Became My Obsession</p>
+                </div>
+
+                <div class="memory-item" data-transition="zoom-reveal">
+                    <div class="memory-frame">
+                        <img src="09.jpg" alt="Memory 9" class="memory-img" loading="lazy">
+                        <div class="memory-overlay zoom-reveal"></div>
+                    </div>
+                    <p class="memory-caption">And My Obsession, My Protector</p>
+                </div>
+            </div>
+
+            <button class="continue-btn" id="continueBtn2" onclick="goToWish()" style="margin-top:60px">Continue to Our Wish</button>
+        </section>
+
+        <!-- SCENE 4: Our Wish -->
+        <section id="scene4" class="section">
+            <h2 class="wish-title">Our Wish</h2>
+            <p class="wish-subtitle">Beneath the same moon that watches over us...</p>
+
+            <div class="wish-parchment">
+                <div class="wish-content" id="wishContent">
+                    <p>There is only one wish I have never stopped making.</p>
+                    <p>Not for endless wealth. Not for perfect days. Not for a life without storms. Because storms teach us how tightly two hands can hold each other.</p>
+                    <p>My wish is simpler.</p>
+                    <p>May we always remain two people who never stop choosing kindness before pride. May laughter always find us after tears. May forgiveness arrive before silence grows too heavy. May every disagreement become another reason to understand rather than another excuse to walk away.</p>
+                    <p>I hope our home is never measured by walls, but by the peace we create inside them. I hope our mornings begin with gratitude. Our evenings end with comfort. And every ordinary day quietly becomes another unforgettable memory.</p>
+                    <p>May our dreams grow together instead of apart. May our fears become lighter because they are carried by two hearts instead of one.</p>
+                    <p>If life ever asks us to wait... may we wait together. If life asks us to fight... may we stand side by side. If life blesses us... may we remain humble enough to remember where we started.</p>
+                    <p>And if one day our hair turns silver... our hands become slower... and our footsteps quieter... I hope we still look at each other exactly as we do now. With wonder. With gratitude. With the silent certainty that among billions of people in this endless universe... our hearts somehow found their way home.</p>
+                    <p>That... is all I have ever wished for.</p>
+                </div>
+            </div>
+
+            <button class="continue-btn" id="continueBtn3" onclick="goToPromise()">Continue to Our Promise</button>
+        </section>
+
+        <!-- SCENE 5: Our Promise -->
+        <section id="scene5" class="section">
+            <h2 class="promise-title">Our Promise</h2>
+            <p class="promise-subtitle">Words that will outlive time...</p>
+
+            <div class="promise-parchment">
+                <div class="promise-content" id="promiseContent">
+                    <p>Today, beneath the same moon that has quietly watched every chapter of our story, I make these promises&mdash;not because love demands them, but because my heart chooses them.</p>
+                    <p>I promise to love you not only on the easy days, but also on the days when life feels uncertain and our strength is tested.</p>
+                    <p>I promise to celebrate your victories as if they were my own, and to stand beside you through every disappointment without ever making you face it alone.</p>
+                    <p>I promise to listen before I speak, to understand before I judge, and to remember that every heart carries battles invisible to the world.</p>
+                    <p>I promise to protect the little things that make us us: the laughter that appears for no reason, the quiet moments where words are unnecessary, the dreams we whisper late at night, and the memories we create without realizing they will one day become treasures.</p>
+                    <p>When distance separates us, I promise that my loyalty will never measure itself in miles. When time changes us, I promise to keep discovering the new versions of you with the same curiosity as the first day we met.</p>
+                    <p>When fear visits, I will offer hope. When darkness arrives, I will become light where I can. When you are tired, I will remind you to rest. When you forget your worth, I will remember it for both of us.</p>
+                    <p>I cannot promise a perfect life. There will be misunderstandings. There will be moments of weakness. There will be seasons we never expected.</p>
+                    <p>But I promise that I will never stop choosing us over my pride, our future over temporary anger, and love over fear.</p>
+                    <p>Because forever is not built in a single extraordinary moment. It is built quietly... in ordinary mornings, shared smiles, forgiven mistakes, held hands, patient hearts, and the decision to stay even when staying requires courage.</p>
+                    <p>One day, every flower we admire will fade. Every season will pass. Even the brightest stars will one day grow silent.</p>
+                    <p>But if love leaves behind anything eternal, I hope it is this: That somewhere in the story of the universe, two imperfect souls met, loved honestly, grew together, and proved that forever is not measured by time&mdash;but by the depth of two hearts that never stopped finding their way back to one another.</p>
+                    <p>And as long as my heart remembers how to beat, it will remember your name.</p>
+                    <p>Always. Forever.</p>
+                </div>
+            </div>
+
+            <div class="rings-container">
+                <div class="intertwined-rings">
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                </div>
+                <div class="heartbeat"></div>
+            </div>
+
+            <button class="continue-btn" id="continueBtn4" onclick="goToFinale()">Continue to Forever</button>
+        </section>
+
+        <!-- SCENE 6: Grand Finale -->
+        <section id="scene6" class="section">
+            <div class="finale-sky"></div>
+            <div class="finale-content">
+                <div class="finale-quote">
+                    <p>"Our story does not end here...</p>
+                    <p>It simply continues wherever our hearts meet."</p>
+                </div>
+
+                <div class="finale-forever">Forever</div>
+                <div class="finale-heart">&#10084;</div>
+
+                <button class="relive-btn" onclick="reliveStory()">Relive Our Story</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="navDots">
+        <div class="nav-dot active" onclick="goToScene(1)"></div>
+        <div class="nav-dot" onclick="goToScene(2)"></div>
+        <div class="nav-dot" onclick="goToScene(3)"></div>
+        <div class="nav-dot" onclick="goToScene(4)"></div>
+        <div class="nav-dot" onclick="goToScene(5)"></div>
+        <div class="nav-dot" onclick="goToScene(6)"></div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <span class="scroll-text">Scroll to explore</span>
+        <div class="scroll-arrow"></div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop>
+        <source src="thousands-years.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
